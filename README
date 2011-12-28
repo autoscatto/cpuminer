@@ -3,12 +3,18 @@ This is a multi-threaded CPU miner for Litecoin, fork of Pooler's CPU miner for 
 License: GPLv2.  See COPYING for details.
 
 Dependencies:
-	libcurl			http://curl.haxx.se/libcurl/
-	jansson			http://www.digip.org/jansson/  (jansson is optional, and is included in-tree)
-    tmalloc         http://code.google.com/p/google-perftools/
+        libcurl			http://curl.haxx.se/libcurl/
+        jansson			http://www.digip.org/jansson/  (jansson is optional, and is included in-tree)
+        tmalloc         http://code.google.com/p/google-perftools/
 
 Basic *nix build instructions:
-	./autogen.sh	# only needed if building from git repo
-	CFLAGS="-O3 -Wall -mmmx -msse -msse2 -mfpmath=sse -funroll-loops -march=native" ./configure
-	make
+        ./autogen.sh	# only needed if building from git repo
+        CFLAGS="-O3 -Wall -mmmx -msse -msse2 -mfpmath=sse -funroll-loops -march=native" ./configure
+        make
 
+
+########### CAUTION ###########
+This fork does not have the presumption to be portable (as opposed to the original project https://github.com/pooler/cpuminer). 
+Presumably it works on machines (x86, x86_64) with full support for SSE2. In addition, the optimizations have a positive effect on the machines I've tested but nothing prohibits that in other cases are regressions.
+
+Happy hacking.
